@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppointmentListComponent {
 
+  items: Array<string> = ['item1', 'item2', 'item3'];
+
+  private log(text: string): void {
+    console.log(text)
+  }
+
+  f() {
+    this.log('this is a log')
+  }
 }

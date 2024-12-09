@@ -9,5 +9,5 @@ import { AppointmentListComponent } from "./appointment-list/appointment-list.co
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'appointment-app';
+  title: string = 'appointment-app';
 }
