@@ -21,3 +21,10 @@
     >
     <button (click)="addAppointment()">Add</button>
 </form>
+
+<ul>
+    <li
+        *ngFor="let appointment of appointments">
+            <span id="{{ appointment.id }}">{{ appointment.title }} - {{ appointment.date | date: 'dd/MM/yyyy' }}</span>
+    </li>
+</ul>

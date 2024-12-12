@@ -24,8 +24,6 @@ export class AppointmentListComponent {
       this.appointments.push(newAppointment);
       this.newAppointmentTitle = "";
       this.newAppointmentDate = new Date();
-
-      alert("Appointment added! You have now : " + this.appointments.length + " appointment(s)");
     }
   }
 }
