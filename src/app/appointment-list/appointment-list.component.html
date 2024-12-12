@@ -1,1 +1,21 @@
-<p>{{appointment}}</p>
+<form>
+    <label for="title">
+        Description:
+    </label>
+    <input
+        [(ngModel)]="newAppointmentTitle"
+        type="text"
+        id="title"
+        placeholder="Description"
+    >
+    <label for="date">
+        Date:
+    </label>
+    <input
+        [(ngModel)]="newAppointmentDate"
+        type="date"
+        id="date"
+        placeholder="Date"
+    >
+    <button>Add</button>
+</form>
