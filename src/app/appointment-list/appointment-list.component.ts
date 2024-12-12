@@ -7,14 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './appointment-list.component.css'
 })
 export class AppointmentListComponent {
+  appointment: string = 'Take dog for a walk';
 
-  items: Array<string> = ['item1', 'item2', 'item3'];
-
-  private log(text: string): void {
-    console.log(text)
-  }
-
-  f() {
-    this.log('this is a log')
-  }
 }
