@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Appointment } from '../models/appointment';
 import { StandaloneSharedModules } from '../shared/Standalone-shared';
+import { OnInit } from '@angular/core';
 @Component({
   selector: 'app-appointment-list',
   standalone: true,
@@ -8,12 +9,16 @@ import { StandaloneSharedModules } from '../shared/Standalone-shared';
   templateUrl: './appointment-list.component.html',
   styleUrl: './appointment-list.component.css'
 })
-export class AppointmentListComponent {
+export class AppointmentListComponent implements OnInit {
   newAppointmentTitle: string = "";
   newAppointmentDate: Date = new Date();
   appointments: Appointment[] = []
 
-  addAppointment():void{
+  ngOnInit(): void {
+    this.appointments = JSON.parse(localStorage.getItem("appointments") ?? "[]");
+  }
+
+  addAppointment(): void {
     if(this.newAppointmentTitle.trim().length && this.newAppointmentDate){
       let newAppointment: Appointment = {
         id: Date.now(),
@@ -30,7 +35,7 @@ export class AppointmentListComponent {
     }
   }
 
-  deleteAppointment(index: number):void{
+  deleteAppointment(index: number): void {
     this.appointments.splice(index, 1);
     localStorage.setItem("appointments", JSON.stringify(this.appointments));
   }
